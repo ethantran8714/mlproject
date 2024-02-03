@@ -1,1 +1,1 @@
-## End-to-End Machine Learning Project (walkthrough w/ Krish Naik)
+## End-to-End Machine Learning Project
