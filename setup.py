@@ -17,9 +17,11 @@ def get_requirements(file_path:str)->List[str]:
         # NOTICE THAT WE NEED -e ., but it should not be included later
         if HYPHEN_E_DOT in requirements:
             requirements.remove(HYPHEN_E_DOT)
-
+    print(requirements)
     return requirements
 
+# Every time you install, comment out the -e . otherwise the packages of the entire project will keep rebuilding over and over.
+# Remember, this just tells pip to install the requirements specified in setup.py (which is this)
 # -e . flag in requirements.txt means that it is editable(?) - but basically connects it to setup.py
 
 # By writing words such as pandas, numpy, and seaborn before the flag
