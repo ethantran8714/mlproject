@@ -94,8 +94,11 @@ class DataTransformation:
                 f"Applying preprocessing object on training dataframe and testing dataframe."
             )
 
+            # ONLY FIT THE DATA ON THE TRAIN DATA -- you want to learn the parameters (mean, SD from training data only)
+            # prevents data leakage from the testing data into training data
+            # also by transforming, you ensure that both are consistenly transformed
             input_feature_train_arr = preprocessing_obj.fit_transform(input_feature_train_df)
-            input_feature_test_arr = preprocessing_obj.fit_transform(input_feature_test_df)
+            input_feature_test_arr = preprocessing_obj.transform(input_feature_test_df) # apply learned transformation
 
             # Concatenate arrays along the second axis (column wise)
             # so imagine a list of values, would turn into a column as each values get their own row
