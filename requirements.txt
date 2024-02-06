@@ -8,4 +8,5 @@ cmake
 catboost
 xgboost
 dill
+flask
 #-e .
